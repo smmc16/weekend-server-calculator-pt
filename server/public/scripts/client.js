@@ -3,8 +3,8 @@ console.log('client.js is sourced!');
 function submitCalculations(event) {
     event.preventDefault();
 
-    getCalculations();
     postCalculations();
+    getCalculations();
 }
 
 let operatorObject = {
@@ -50,6 +50,11 @@ function getCalculations() {
     axios.get('/calculations').then((response) => {
         console.log('GET request made for /calculations')
         let calculations = response.data;
+        let recentResult = calculations[calculations.length - 1].result;
+        console.log(recentResult);
+        let result = document.querySelector('#result');
+        result.innerHTML = `${recentResult}`;
+
     }).catch((error) => {
         console.log(error);
     })
