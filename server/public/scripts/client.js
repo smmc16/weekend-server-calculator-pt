@@ -3,6 +3,17 @@ console.log('client.js is sourced!');
 function submitCalculations(event) {
     event.preventDefault();
 
+    if (operatorObject.add === false && operatorObject.subtract === false && operatorObject.multiply === false && operatorObject.divide === false) {
+        return alert('Please select an operator');
+    };
+
+    let numOne = document.querySelector('#numOne').value;
+    let numTwo = document.querySelector('#numTwo').value;
+
+    if(numOne === '' || numTwo === '') {
+        return alert('Please enter a number');
+    };
+
     postCalculations();
     getCalculations();
 }
