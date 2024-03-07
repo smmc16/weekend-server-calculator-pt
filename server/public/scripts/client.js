@@ -54,6 +54,13 @@ function getCalculations() {
         console.log(recentResult);
         let result = document.querySelector('#result');
         result.innerHTML = `${recentResult}`;
+        let resultHistory = document.querySelector('#resultHistory');
+        resultHistory.innerHTML = '';
+        for(let calculation of calculations){
+            resultHistory.innerHTML += `
+                <p>${calculation.numOne} ${calculation.operator} ${calculation.numTwo} = ${calculation.result}
+            `
+        }
 
     }).catch((error) => {
         console.log(error);
