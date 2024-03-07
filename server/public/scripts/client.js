@@ -58,6 +58,7 @@ function getCalculations() {
 function postCalculations() {
     axios.post('/calculations', calculationObject).then((response) => {
         console.log(response);
+        
     
     }).catch((error) => {
         console.log(error);
