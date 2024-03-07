@@ -114,3 +114,10 @@ function clearInputs(event) {
     numOne.value = '';
     numTwo.value = ''
 } 
+
+function clearHistory() {
+    axios.delete('/calculations/1').then((response) => {
+
+    });
+    location.reload()
+}

@@ -38,6 +38,11 @@ app.post('/calculations', (req, res) => {
   res.sendStatus(201);
 })
 
+app.delete('/calculations/:id', (req, res) => {
+  calculations = [];
+  res.sendStatus(201);
+})
+
 // PLEASE DO NOT MODIFY ANY CODE BELOW THESE BEARS:
 // 🐻  🐻‍❄️  🧸  🐻  🐻‍❄️  🧸  🐻  🐻‍❄️  🧸  🐻  🐻‍❄️  🧸
 
