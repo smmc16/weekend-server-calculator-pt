@@ -31,6 +31,8 @@ function add(event) {
     operatorObject.subtract = false;
     operatorObject.multiply = false;
     operatorObject.divide = false;
+    let numOne = document.querySelector('#numOne');
+    numOne.value += '+';
 }
 
 function subtract(event) {
@@ -39,6 +41,8 @@ function subtract(event) {
     operatorObject.subtract = true;
     operatorObject.multiply = false;
     operatorObject.divide = false;
+    let numOne = document.querySelector('#numOne');
+    numOne.value += '-';
 }
 
 function multiply(event) {
@@ -47,6 +51,8 @@ function multiply(event) {
     operatorObject.subtract = false;
     operatorObject.multiply = true;
     operatorObject.divide = false;
+    let numOne = document.querySelector('#numOne');
+    numOne.value += '*';
 }
 
 function divide(event) {
@@ -55,6 +61,8 @@ function divide(event) {
     operatorObject.subtract = false;
     operatorObject.multiply = false;
     operatorObject.divide = true;
+    let numOne = document.querySelector('#numOne');
+    numOne.value += '/';
 }
 
 function getCalculations() {
@@ -120,4 +128,70 @@ function clearHistory() {
 
     });
     location.reload()
+}
+
+function one(event) {
+    event.preventDefault();
+    let numOne = document.querySelector('#numOne');
+    numOne.value += 1;
+}
+
+function two(event) {
+    event.preventDefault();
+    let numOne = document.querySelector('#numOne');
+    numOne.value += 2;
+}
+
+function three(event) {
+    event.preventDefault();
+    let numOne = document.querySelector('#numOne');
+    numOne.value += 3;
+}
+
+function four(event) {
+    event.preventDefault();
+    let numOne = document.querySelector('#numOne');
+    numOne.value += 4;
+}
+
+function five(event) {
+    event.preventDefault();
+    let numOne = document.querySelector('#numOne');
+    numOne.value += 5;
+}
+
+function six(event) {
+    event.preventDefault();
+    let numOne = document.querySelector('#numOne');
+    numOne.value += 6;
+}
+
+function seven(event) {
+    event.preventDefault();
+    let numOne = document.querySelector('#numOne');
+    numOne.value += 7;
+}
+
+function eight(event) {
+    event.preventDefault();
+    let numOne = document.querySelector('#numOne');
+    numOne.value += 8;
+}
+
+function nine(event) {
+    event.preventDefault();
+    let numOne = document.querySelector('#numOne');
+    numOne.value += 9;
+}
+
+function zero(event) {
+    event.preventDefault();
+    let numOne = document.querySelector('#numOne');
+    numOne.value += 0;
+}
+
+function decimal(event) {
+    event.preventDefault();
+    let numOne = document.querySelector('#numOne');
+    numOne.value += '.';
 }

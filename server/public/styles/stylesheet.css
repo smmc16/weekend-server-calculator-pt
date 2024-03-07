@@ -1,0 +1,12 @@
+#numberBtns {
+    display: grid;
+    grid-template-columns: 25px 25px 25px;
+    grid-template-rows: 25px 25px 25px 25px;
+    margin: 25px;
+}
+
+#operatorBtns {
+    display: grid;
+    grid-template-columns: 25px 25px 25px 25px;
+    margin: 25px;
+}

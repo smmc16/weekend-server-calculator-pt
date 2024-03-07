@@ -11,10 +11,7 @@
     <h1>Server-Side Calculator</h1>
 
     <form data-testid="calculator">
-      <input placeholder="First Number" id="numOne">
-      <button onclick="clearInputs(event)">C</button>
-    <div id="calculatorBtns">
-      <button onclick="zero(event)">0</button>
+    <div id="numberBtns">
       <button onclick="one(event)">1</button>
       <button onclick="two(event)">2</button>
       <button onclick="three(event)">3</button>
@@ -24,15 +21,18 @@
       <button onclick="seven(event)">7</button>
       <button onclick="eight(event)">8</button>
       <button onclick="nine(event)">9</button>
-    
+      <button onclick="zero(event)">0</button>
+      <button onclick="decimal(event)">.</button>
+    </div>
+    <div id="operatorBtns">
       <button onclick="add(event)">+</button>
       <button onclick="subtract(event)">-</button>
       <button onclick="multiply(event)">*</button>
       <button onclick="divide(event)">/</button>
-      <button onclick="submitCalculations(event)">=</button>
     </div>
-      
-      <input placeholder="Second Number" id="numTwo">
+    <button onclick="submitCalculations(event)">=</button>
+    <input placeholder="First Number" id="numOne">
+    <button onclick="clearInputs(event)">C</button>
       
     </form>
 
