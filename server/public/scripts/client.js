@@ -95,3 +95,11 @@ function postCalculations() {
         console.log(error);
     })
 }
+
+function clearInputs(event) {
+    event.preventDefault();
+    let numOne = document.querySelector('#numOne');
+    let numTwo = document.querySelector('#numTwo');
+    numOne.value = '';
+    numTwo.value = ''
+} 
