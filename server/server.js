@@ -23,7 +23,14 @@ app.post('/calculations', (req, res) => {
   console.log('POST request made for /calculations')
   console.log(req.body);
   let currentCalculation = req.body;
-  if(currentCalculation.operator == '+') {
+  console.log(eval(currentCalculation.numOne));
+  currentCalculation.result = eval(currentCalculation.numOne);
+   if (currentCalculation == error) {
+    return alert('Please enter a number');
+   }
+
+
+  /*if(currentCalculation.operator == '+') {
     currentCalculation.result = Number(currentCalculation.numOne) + Number(currentCalculation.numTwo);
   } else if (currentCalculation.operator == '-') {
     currentCalculation.result = Number(currentCalculation.numOne) - Number(currentCalculation.numTwo);
@@ -31,7 +38,7 @@ app.post('/calculations', (req, res) => {
     currentCalculation.result = Number(currentCalculation.numOne) * Number(currentCalculation.numTwo);
   } else if (currentCalculation.operator == '/') {
     currentCalculation.result = Number(currentCalculation.numOne) / Number(currentCalculation.numTwo);
-  }
+  } */
   console.log(currentCalculation.result);
   calculations.push(currentCalculation);
   console.log(calculations);

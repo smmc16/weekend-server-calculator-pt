@@ -8,9 +8,9 @@ function submitCalculations(event) {
     };
 
     let numOne = document.querySelector('#numOne').value;
-    let numTwo = document.querySelector('#numTwo').value;
+    
 
-    if(numOne === '' || numTwo === '') {
+    if(numOne === '') {
         return alert('Please enter a number');
     };
 
@@ -77,7 +77,7 @@ function getCalculations() {
         resultHistory.innerHTML = '';
         for(let calculation of calculations){
             resultHistory.innerHTML += `
-                <p>${calculation.numOne} ${calculation.operator} ${calculation.numTwo} = ${calculation.result}
+                <p>${calculation.numOne}</p>
             `
         }
 
@@ -88,13 +88,11 @@ function getCalculations() {
 
 function postCalculations() {
     let numOne = document.querySelector('#numOne').value
-    let numTwo = document.querySelector('#numTwo').value
 
     let calculationObject = {
         numOne: numOne,
-        numTwo: numTwo,
     }
-
+    /*
     if(operatorObject.add === true) {
         calculationObject.operator = '+'
     } else if(operatorObject.subtract === true) {
@@ -103,7 +101,7 @@ function postCalculations() {
         calculationObject.operator = '*'
     } else if(operatorObject.divide === true) {
         calculationObject.operator = '/'
-    };
+    }; */
     console.log(calculationObject);
     
     axios.post('/calculations', calculationObject).then((response) => {
@@ -118,9 +116,9 @@ function postCalculations() {
 function clearInputs(event) {
     event.preventDefault();
     let numOne = document.querySelector('#numOne');
-    let numTwo = document.querySelector('#numTwo');
+    
     numOne.value = '';
-    numTwo.value = ''
+    
 } 
 
 function clearHistory() {
