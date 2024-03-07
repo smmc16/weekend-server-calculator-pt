@@ -31,7 +31,7 @@
       <button onclick="divide(event)">/</button>
     </div>
     <button onclick="submitCalculations(event)">=</button>
-    <input placeholder="First Number" id="numOne">
+    <input placeholder="First Number" id="numOne" onkeypress="return false;">
     <button onclick="clearInputs(event)">C</button>
       
     </form>
@@ -41,8 +41,10 @@
       <!-- The most recent calculation result goes here. -->
     </section>
     <button onclick="clearHistory()">Clear history</button>
+  <ul>
     <section data-testid="resultHistory" id="resultHistory">
       <!-- The list of calculation results goes here. -->
     </section>
+  </ul>
   </body>
 </html>

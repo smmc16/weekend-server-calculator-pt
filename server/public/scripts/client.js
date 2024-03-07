@@ -77,7 +77,7 @@ function getCalculations() {
         resultHistory.innerHTML = '';
         for(let calculation of calculations){
             resultHistory.innerHTML += `
-                <p>${calculation.numOne}</p>
+                <li>${calculation.numOne}</li>
             `
         }
 

@@ -25,9 +25,6 @@ app.post('/calculations', (req, res) => {
   let currentCalculation = req.body;
   console.log(eval(currentCalculation.numOne));
   currentCalculation.result = eval(currentCalculation.numOne);
-   if (currentCalculation == error) {
-    return alert('Please enter a number');
-   }
 
 
   /*if(currentCalculation.operator == '+') {
