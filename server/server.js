@@ -22,7 +22,19 @@ app.get('/calculations', (req, res) => {
 app.post('/calculations', (req, res) => {
   console.log('POST request made for /calculations')
   console.log(req.body);
-  
+  let currentCalculation = req.body;
+  if(currentCalculation.operator == '+') {
+    currentCalculation.result = Number(currentCalculation.numOne) + Number(currentCalculation.numTwo);
+  } else if (currentCalculation.operator == '-') {
+    currentCalculation.result = Number(currentCalculation.numOne) - Number(currentCalculation.numTwo);
+  } else if (currentCalculation.operator == '*') {
+    currentCalculation.result = Number(currentCalculation.numOne) * Number(currentCalculation.numTwo);
+  } else if (currentCalculation.operator == '/') {
+    currentCalculation.result = Number(currentCalculation.numOne) / Number(currentCalculation.numTwo);
+  }
+  console.log(currentCalculation.result);
+  calculations.push(currentCalculation);
+  console.log(calculations);
   res.sendStatus(201);
 })
 
