@@ -7,45 +7,13 @@ app.use(express.static('server/public'));
 
 // Global variable that will contain all of the
 // calculation objects:
-let calculations = []
+
 
 
 // Here's a wonderful place to make some routes:
 
-// GET /calculations
-app.get('/calculations', (req, res) => {
-  console.log('GET request made for /calculations')
-  res.send(calculations);
-})
-
-// POST /calculations
-app.post('/calculations', (req, res) => {
-  console.log('POST request made for /calculations')
-  console.log(req.body);
-  let currentCalculation = req.body;
-  console.log(eval(currentCalculation.numOne));
-  currentCalculation.result = eval(currentCalculation.numOne);
-
-
-  /*if(currentCalculation.operator == '+') {
-    currentCalculation.result = Number(currentCalculation.numOne) + Number(currentCalculation.numTwo);
-  } else if (currentCalculation.operator == '-') {
-    currentCalculation.result = Number(currentCalculation.numOne) - Number(currentCalculation.numTwo);
-  } else if (currentCalculation.operator == '*') {
-    currentCalculation.result = Number(currentCalculation.numOne) * Number(currentCalculation.numTwo);
-  } else if (currentCalculation.operator == '/') {
-    currentCalculation.result = Number(currentCalculation.numOne) / Number(currentCalculation.numTwo);
-  } */
-  console.log(currentCalculation.result);
-  calculations.push(currentCalculation);
-  console.log(calculations);
-  res.sendStatus(201);
-})
-
-app.delete('/calculations/:id', (req, res) => {
-  calculations = [];
-  res.sendStatus(201);
-})
+const calculationsRouter = require('./routes/calculations.router')
+app.use('/calculations', calculationsRouter);
 
 // PLEASE DO NOT MODIFY ANY CODE BELOW THESE BEARS:
 // 🐻  🐻‍❄️  🧸  🐻  🐻‍❄️  🧸  🐻  🐻‍❄️  🧸  🐻  🐻‍❄️  🧸
