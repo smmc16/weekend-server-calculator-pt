@@ -77,7 +77,7 @@ function getCalculations() {
         resultHistory.innerHTML = '';
         for(let calculation of calculations){
             resultHistory.innerHTML += `
-                <li>${calculation.numOne}</li>
+                <li onclick="rerunCalculation(event)">${calculation.numOne}</li>
             `
         }
 
@@ -113,10 +113,10 @@ function postCalculations() {
     })
 }
 
+let numOne = document.querySelector('#numOne');
+
 function clearInputs(event) {
     event.preventDefault();
-    let numOne = document.querySelector('#numOne');
-    
     numOne.value = '';
     
 } 
@@ -130,66 +130,59 @@ function clearHistory() {
 
 function one(event) {
     event.preventDefault();
-    let numOne = document.querySelector('#numOne');
     numOne.value += 1;
 }
 
 function two(event) {
     event.preventDefault();
-    let numOne = document.querySelector('#numOne');
     numOne.value += 2;
 }
 
 function three(event) {
     event.preventDefault();
-    let numOne = document.querySelector('#numOne');
     numOne.value += 3;
 }
 
 function four(event) {
     event.preventDefault();
-    let numOne = document.querySelector('#numOne');
     numOne.value += 4;
 }
 
 function five(event) {
     event.preventDefault();
-    let numOne = document.querySelector('#numOne');
     numOne.value += 5;
 }
 
 function six(event) {
     event.preventDefault();
-    let numOne = document.querySelector('#numOne');
     numOne.value += 6;
 }
 
 function seven(event) {
     event.preventDefault();
-    let numOne = document.querySelector('#numOne');
     numOne.value += 7;
 }
 
 function eight(event) {
     event.preventDefault();
-    let numOne = document.querySelector('#numOne');
     numOne.value += 8;
 }
 
 function nine(event) {
     event.preventDefault();
-    let numOne = document.querySelector('#numOne');
     numOne.value += 9;
 }
 
 function zero(event) {
     event.preventDefault();
-    let numOne = document.querySelector('#numOne');
     numOne.value += 0;
 }
 
 function decimal(event) {
     event.preventDefault();
-    let numOne = document.querySelector('#numOne');
     numOne.value += '.';
+}
+
+function rerunCalculation(event) {
+    numOne.value = event.target.innerHTML;
 }
